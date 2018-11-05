@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.effect.InnerShadow?>
@@ -11,32 +18,32 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768" prefWidth="1366" style="-fx-background-color: #BDBDBD;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="isw.controlador.MenuControlador">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1365.0" style="-fx-background-color: #BDBDBD;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="isw.controlador.MenuControlador">
    <children>
-      <Pane prefHeight="678.0" prefWidth="1051.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <BorderPane prefHeight="678.0" prefWidth="1051.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <top>
-            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-               <top>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="BIENVENIDO" textAlignment="CENTER" BorderPane.alignment="CENTER">
-                     <font>
-                        <Font name="Arial Black" size="55.0" />
-                     </font>
-                  </Text>
-               </top>
-               <center>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="¿ Que desea hacer ?" BorderPane.alignment="CENTER">
-                     <font>
-                        <Font name="Arial Black" size="19.0" />
-                     </font>
-                  </Text>
-               </center>
-            </BorderPane>
-         </top>
-         <center>
-            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-               <top>
-                  <Button fx:id="botonCaja" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clickBotonCaja" prefHeight="78.0" prefWidth="141.0" style="-fx-background-color: #A4A4A4;" text="CAJA" BorderPane.alignment="CENTER">
+      <Pane prefHeight="768.0" prefWidth="1365.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text layoutX="443.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BIENVENIDO" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Black" size="55.0" />
+               </font>
+            </Text>
+            <Text layoutX="531.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿ Que desea hacer ?">
+               <font>
+                  <Font name="Arial Black" size="19.0" />
+               </font>
+            </Text>
+            <GridPane layoutX="300.0" layoutY="209.0" prefHeight="542.0" prefWidth="765.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="botonCaja" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clickBotonCaja" prefHeight="78.0" prefWidth="302.0" style="-fx-background-color: #A4A4A4;" text="CAJA">
                      <font>
                         <Font name="Arial Black" size="15.0" />
                      </font>
@@ -54,9 +61,7 @@
                         <InnerShadow height="5.0" radius="2.0" width="5.0" />
                      </effect>
                   </Button>
-               </top>
-               <center>
-                  <Button fx:id="botonGestInv" mnemonicParsing="false" onAction="#clickBotonGestInv" prefHeight="78.0" prefWidth="302.0" style="-fx-background-color: #A4A4A4;" text="GESTIONAR INVENTARIO" BorderPane.alignment="CENTER">
+                  <Button fx:id="botonGestInv" mnemonicParsing="false" onAction="#clickBotonGestInv" prefHeight="78.0" prefWidth="302.0" style="-fx-background-color: #A4A4A4;" text="GESTIONAR INVENTARIO" GridPane.columnIndex="1">
                      <font>
                         <Font name="Arial Black" size="15.0" />
                      </font>
@@ -74,9 +79,66 @@
                         <InnerShadow height="5.0" radius="2.0" width="5.0" />
                      </effect>
                   </Button>
-               </center>
-            </BorderPane>
-         </center>
-      </BorderPane>
+                  <Button fx:id="botonVolver" mnemonicParsing="false" onAction="#clickBotonVolver" prefHeight="78.0" prefWidth="302.0" style="-fx-background-color: #A4A4A4;" text="VOLVER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Black" size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <InnerShadow height="5.0" radius="2.0" width="5.0" />
+                     </effect>
+                     <graphic>
+                        <ImageView fitHeight="45.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@volver.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="51.0" layoutY="62.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="78.0" prefWidth="302.0" style="-fx-background-color: #A4A4A4;" text="GESTIONAR EMPLEADOS" GridPane.rowIndex="1">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <InnerShadow height="5.0" radius="2.0" width="5.0" />
+                     </effect>
+                     <font>
+                        <Font name="Arial Black" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="botonGestPed" layoutX="51.0" layoutY="243.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clickBotonGestPed" prefHeight="78.0" prefWidth="302.0" style="-fx-background-color: #A4A4A4;" text="GESTIONAR PEDIDOS" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <InnerShadow height="5.0" radius="2.0" width="5.0" />
+                     </effect>
+                     <font>
+                        <Font name="Arial Black" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="70.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@pedidos.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="51.0" layoutY="243.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="78.0" prefWidth="302.0" style="-fx-background-color: #A4A4A4;" text="OTROS" GridPane.rowIndex="2">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <InnerShadow height="5.0" radius="2.0" width="5.0" />
+                     </effect>
+                     <font>
+                        <Font name="Arial Black" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </GridPane>
+         </children></Pane>
    </children>
 </AnchorPane>
