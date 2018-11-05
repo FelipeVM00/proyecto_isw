@@ -33,7 +33,7 @@ public class LoginControlador {
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
-		//stage.setFullScreen(true);
+		stage.setFullScreen(true);
 	}
 
 	@FXML
