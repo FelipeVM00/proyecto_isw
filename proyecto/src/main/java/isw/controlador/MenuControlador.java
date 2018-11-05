@@ -12,27 +12,56 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-
 public class MenuControlador {
 
-    @FXML
-    private Button botonCaja;
+	@FXML
+	private Button botonCaja;
 
-    @FXML
-    private Button botonGestInv;
+	@FXML
+	private Button botonGestInv;
 
-    @FXML
-    void clickBotonCaja(ActionEvent event) throws IOException {
-  	  Stage stage = (Stage) botonCaja.getScene().getWindow();
-  	  Parent root = FXMLLoader.load(getClass().getResource("/isw/vista/caja.fxml"));
-  	  Scene scene = new Scene(root);
-  	  stage.setScene(scene);
-  	  stage.show();
-  	  //stage.setFullScreen(true);
-    }
+	@FXML
+	private Button botonGestPed;
 
-    @FXML
-    void clickBotonGestInv(ActionEvent event) {
-    	
-    }
+	@FXML
+	private Button botonVolver;
+
+	@FXML
+	void clickBotonCaja(ActionEvent event) throws IOException {
+		Stage stage = (Stage) botonCaja.getScene().getWindow();
+		Parent root = FXMLLoader.load(getClass().getResource("/isw/vista/caja.fxml"));
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+		stage.setFullScreen(true);
+	}
+
+	@FXML
+	void clickBotonVolver(ActionEvent event) throws IOException {
+		Stage stage = (Stage) botonVolver.getScene().getWindow();
+		Parent root = FXMLLoader.load(getClass().getResource("/isw/vista/login.fxml"));
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
+
+	@FXML
+	void clickBotonGestInv(ActionEvent event) throws IOException {
+
+		Stage stage = (Stage) botonGestInv.getScene().getWindow();
+		Parent root = FXMLLoader.load(getClass().getResource("/isw/vista/gesInventario.fxml"));
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+		stage.setFullScreen(true);
+		}
+
+	@FXML
+	void clickBotonGestPed(ActionEvent event) throws IOException {
+		Stage stage = (Stage) botonGestPed.getScene().getWindow();
+		Parent root = FXMLLoader.load(getClass().getResource("/isw/vista/gestPedidos.fxml"));
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
 }
