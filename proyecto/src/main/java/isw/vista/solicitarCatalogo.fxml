@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="634.0" prefWidth="570.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="isw.controlador.solCatalogoControlador">
+<AnchorPane prefHeight="634.0" prefWidth="570.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="isw.controlador.SolCatalogoControlador">
    <children>
       <Pane prefHeight="634.0" prefWidth="570.0" style="-fx-background-color: #BDBDBD;">
          <children>

@@ -25,6 +25,9 @@ public class MenuControlador {
 
 	@FXML
 	private Button botonVolver;
+	
+	@FXML
+	private Button botonGestVentas;
 
 	@FXML
 	void clickBotonCaja(ActionEvent event) throws IOException {
@@ -54,7 +57,16 @@ public class MenuControlador {
 		stage.setScene(scene);
 		stage.show();
 		stage.setFullScreen(true);
-		}
+	}
+	
+	@FXML
+	void clickBotonGestVentas(ActionEvent event) throws IOException {
+		Stage stage = (Stage) botonVolver.getScene().getWindow();
+		Parent root = FXMLLoader.load(getClass().getResource("/isw/vista/gestVentas.fxml"));
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
 
 	@FXML
 	void clickBotonGestPed(ActionEvent event) throws IOException {
