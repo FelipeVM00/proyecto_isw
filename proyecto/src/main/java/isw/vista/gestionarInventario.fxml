@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #BDBDB;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="isw.controlador.GestInvenControlador">
+   <children>
+      <Button fx:id="btnAgregar" layoutX="547.0" layoutY="506.0" mnemonicParsing="false" onAction="#clickBtnAgregar" prefHeight="103.0" prefWidth="284.0" text="Agregar Producto">
+         <font>
+            <Font name="Arial Black" size="24.0" />
+         </font>
+         <effect>
+            <InnerShadow height="5.0" radius="2.0" width="5.0" />
+         </effect>
+      </Button>
+      <Button fx:id="btnEliminar" layoutX="946.0" layoutY="505.0" mnemonicParsing="false" onAction="#clickBtnEliminar" prefHeight="103.0" prefWidth="280.0" text="Eliminar Producto">
+         <effect>
+            <InnerShadow height="5.0" radius="2.0" width="5.0" />
+         </effect>
+         <font>
+            <Font name="Arial Black" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnVolver" layoutX="221.0" layoutY="505.0" mnemonicParsing="false" onAction="#clickBtnVolver" prefHeight="103.0" prefWidth="220.0" text="Volver" textAlignment="CENTER">
+         <effect>
+            <InnerShadow height="5.0" radius="2.0" width="5.0" />
+         </effect>
+         <font>
+            <Font name="Arial Black" size="24.0" />
+         </font>
+      </Button>
+      <Text layoutX="150.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GESTIÓN DE INVENTARIO" textAlignment="CENTER" wrappingWidth="1131.9833984375">
+         <font>
+            <Font name="Arial Black" size="65.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="215.0" fitWidth="205.0" layoutX="955.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@eliminar.png" />
+         </image>
+         <effect>
+            <InnerShadow height="5.0" radius="2.0" width="5.0" />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="215.0" fitWidth="247.0" layoutX="233.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@volver.png" />
+         </image>
+         <effect>
+            <InnerShadow height="5.0" radius="2.0" width="5.0" />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="224.0" fitWidth="354.0" layoutX="588.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@agregar.png" />
+         </image>
+      </ImageView>
+   </children>
+   <effect>
+      <InnerShadow height="5.0" radius="2.0" width="5.0" />
+   </effect>
+</AnchorPane>
