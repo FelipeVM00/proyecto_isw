@@ -1,12 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.web.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="634.0" prefWidth="570.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="isw.controlador.RealizarPedControlador">
    <children>
-      <Pane prefHeight="634.0" prefWidth="570.0" style="-fx-background-color: #BDBDBD;" />
+      <Pane layoutX="-23.0" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #BDBDBD;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text layoutX="36.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Proveedor" />
+            <TextField layoutX="105.0" layoutY="23.0" prefHeight="25.0" prefWidth="353.0" />
+            <DatePicker layoutX="580.0" layoutY="23.0" prefHeight="25.0" prefWidth="224.0" />
+            <Text layoutX="483.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha Pedido" />
+            <MenuButton layoutX="839.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="224.0" text="Tipo de Envio">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Transportadora terrestre" />
+                <MenuItem mnemonicParsing="false" text="Transporte Aereo" />
+                  <MenuItem mnemonicParsing="false" text="Transporte Maritimo" />
+              </items>
+            </MenuButton>
+            <Button fx:id="botonAgregar" layoutX="37.0" layoutY="113.0" mnemonicParsing="false" onAction="#clickBotonAgregar" prefHeight="25.0" prefWidth="156.0" text="Agregar" />
+            <Button fx:id="botonQuitar" layoutX="213.0" layoutY="113.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="156.0" text="Quitar " />
+            <TableView layoutX="36.0" layoutY="167.0" prefHeight="561.0" prefWidth="1285.0">
+              <columns>
+                <TableColumn prefWidth="90.0" text="CANTIDAD" />
+                <TableColumn prefWidth="126.0" text="CODIGO" />
+                  <TableColumn minWidth="0.0" prefWidth="103.0" text="DESCRIPCIÓN" />
+                  <TableColumn prefWidth="158.0" text="PRECIO" />
+                  <TableColumn prefWidth="100.0" text="DESCUENTO" />
+                  <TableColumn prefWidth="145.0" text="TIPO DE PAGO" />
+                  <TableColumn prefWidth="145.0" text="VALOR COP $ " />
+                  <TableColumn prefWidth="181.0" text="PROVEEDOR PRINCIPAL" />
+                  <TableColumn prefWidth="236.0" text="OBSERVACIONES " />
+              </columns>
+            </TableView>
+            <Button fx:id="botonVolver" layoutX="1138.0" layoutY="23.0" mnemonicParsing="false" onAction="#clickBotonVolver" prefHeight="25.0" prefWidth="156.0" text="Volver" />
+         </children></Pane>
    </children>
 </AnchorPane>
