@@ -14,54 +14,67 @@ import javafx.stage.Stage;
 public class GestPedControlador {
 
 	@FXML
-    private Button botonVolver;
-	
+	private Button botonVolver;
+
 	@FXML
-    private Button botonAceptar;
-	
+	private Button botonAceptar;
+
 	@FXML
-    private RadioButton botonSolicitarCatalogo;
-	
+	private RadioButton botonSolicitarCatalogo;
+
 	@FXML
-    private RadioButton botonRealizarPedido;
-	
+	private RadioButton botonRealizarPedido;
+
 	@FXML
-    private RadioButton botonRecibirPedido;
-	
+	private RadioButton botonRecibirPedido;
+
 	@FXML
-    private RadioButton botonVerificarPedido;
-		
+	private RadioButton botonVerificarPedido;
+
 	@FXML
-    private RadioButton botonPagarPedido;
-	
+	private RadioButton botonPagarPedido;
+
 	@FXML
-    void clickBotonVolver(ActionEvent event) throws IOException {
+	void clickBotonVolver(ActionEvent event) throws IOException {
 		Stage stage = (Stage) botonVolver.getScene().getWindow();
 		Parent root = FXMLLoader.load(getClass().getResource("/isw/vista/menu.fxml"));
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
 		stage.setFullScreen(true);
-    }
-	
+	}
+
 	@FXML
-    void clickBotonAceptar(ActionEvent event) throws IOException {
-		if(botonSolicitarCatalogo.isSelected()) {
+	void clickBotonAceptar(ActionEvent event) throws IOException {
+		if (botonSolicitarCatalogo.isSelected()) {
 			Stage stage = (Stage) botonAceptar.getScene().getWindow();
 			Parent root = FXMLLoader.load(getClass().getResource("/isw/vista/solicitarCatalogo.fxml"));
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();
+			stage.setFullScreen(true);
 		}
-		
-		if(botonRealizarPedido.isSelected()) {
+
+		if (botonRealizarPedido.isSelected()) {
 			Stage stage = (Stage) botonAceptar.getScene().getWindow();
 			Parent root = FXMLLoader.load(getClass().getResource("/isw/vista/realizarPedido.fxml"));
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();
+			stage.setFullScreen(true);
 		}
-		
-		
+
+		if (botonRecibirPedido.isSelected()) {
+
+		}
+
+		if (botonVerificarPedido.isSelected()) {
+
+		}
+
+		if (botonPagarPedido.isSelected()) {
+
+		}
+
 	}
 }
