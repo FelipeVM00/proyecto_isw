@@ -9,6 +9,7 @@ import com.mysql.cj.Query;
 import isw.modelo.Producto;
 import isw.proyecto.jdbc.util.conexBd;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -59,7 +60,7 @@ public class AgregarProdControlador implements Initializable {
 	
 	@FXML
     void clickBtnAgregar(ActionEvent event) throws IOException {
-
+		System.out.println("asd");
 		ConsultaBd agregarProducto = new ConsultaBd(conexion);
 		
 		String nombre = (fldNombre.getText());
@@ -75,7 +76,11 @@ public class AgregarProdControlador implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		
 		conexion = new conexBd().conectarse();
-		
+		btnAgregar.setOnAction(new EventHandler<ActionEvent>() {
+		    @Override public void handle(ActionEvent e) {
+		        System.out.println("asdd");
+		    }
+		});
 		
 	}
 
