@@ -48,7 +48,6 @@ public class LoginControlador {
 		Usuario login = new Usuario();
 		consultarUsario.consultarUsuario(usuarioLogin.getText(), contraseña.getText(), login);
 		Stage stage = (Stage) botonIngresar.getScene().getWindow();
-		System.out.println(usuarioLogin.getText()+contraseña.getText());
 		if(usuarioLogin.getText().trim().equals(login.getNombre()) && contraseña.getText().trim().equals(login.getContraseña())) {
 			Parent root = FXMLLoader.load(getClass().getResource("/isw/vista/menu.fxml"));
 			Scene scene = new Scene(root);
