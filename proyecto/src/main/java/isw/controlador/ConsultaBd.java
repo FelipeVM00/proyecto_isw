@@ -15,6 +15,7 @@ public class ConsultaBd {
 	
 	private PreparedStatement consultarProductoo = null;
 	private PreparedStatement consultarProductoo2 = null;
+	private PreparedStatement newProducto = null;
 	
 	public ConsultaBd(Connection conex) {
 		this.conexion = conex;
@@ -23,6 +24,8 @@ public class ConsultaBd {
 					"SELECT id, nombre, cantidad, precio FROM producto WHERE nombre = ?");
 			consultarProductoo2 = conexion.prepareStatement(
 					"SELECT id, nombre, cantidad, precio FROM producto WHERE id = ?");
+			newProducto =conexion.prepareStatement(
+					"INSERT INTO producto "+"(id, nombre, cantidad, precio )"+" VALUES (?, ?, ?, ?)");
 		}
 		catch (SQLException sqlException) {
 			sqlException.printStackTrace();
@@ -68,6 +71,26 @@ public class ConsultaBd {
 			sqlException.printStackTrace();
 		}
 		return pro;
+	}
+	
+  public void agregarProducto (String nombre, String id, Double precio, int cantidad) {
+		
+		try {
+			
+			newProducto.setString(1, id);
+			newProducto.setString(2, nombre);
+			newProducto.setDouble(3, precio);
+			newProducto.setInt(4, cantidad);
+			newProducto.executeUpdate();	
+		
+		}
+		
+		catch(SQLException exception){
+		
+			exception.printStackTrace();
+
+		}
+
 	}
 	
 	public void close() {

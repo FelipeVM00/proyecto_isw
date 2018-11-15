@@ -240,7 +240,7 @@ public class CajaControlador implements Initializable{
     	dialog.show();	
     	double tot = Double.valueOf(total.getText().replace("TOTAL:    ", ""));
     	recibe.textProperty().addListener((observable, oldValue, newValue) -> {
-    		cambio.setText(String.valueOf((Double.valueOf(recibe.getText()))-tot));
+    	cambio.setText(String.valueOf((Double.valueOf(recibe.getText()))-tot));
     	});
     }
 
