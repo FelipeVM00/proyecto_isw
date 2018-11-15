@@ -7,8 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #BDBDBD" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="isw.controlador.EliminarProdControlador">
    <effect>
       <InnerShadow />
    </effect>
@@ -38,7 +37,7 @@
             <Font name="Arial Black" size="36.0" />
          </font>
       </Text>
-      <Button fx:id="btnAceptar" layoutX="332.0" layoutY="486.0" mnemonicParsing="false" prefHeight="94.0" prefWidth="205.0" text="Aceptar">
+      <Button fx:id="btnAceptar" layoutX="190.0" layoutY="601.0" mnemonicParsing="false" prefHeight="94.0" prefWidth="205.0" text="Aceptar">
          <font>
             <Font name="Arial Black" size="36.0" />
          </font>
@@ -46,7 +45,7 @@
             <InnerShadow height="5.0" radius="2.0" width="5.0" />
          </effect>
       </Button>
-      <Button fx:id="btnCancelar" layoutX="782.0" layoutY="486.0" mnemonicParsing="false" prefHeight="94.0" prefWidth="225.0" text="Cancelar">
+      <Button fx:id="btnCancelar" layoutX="782.0" layoutY="601.0" mnemonicParsing="false" prefHeight="94.0" prefWidth="225.0" text="Cancelar">
          <font>
             <Font name="Arial Black" size="36.0" />
          </font>
@@ -54,5 +53,14 @@
             <InnerShadow height="5.0" radius="2.0" width="5.0" />
          </effect>
       </Button>
+      <Text layoutX="96.0" layoutY="486.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cantidad:">
+         <font>
+            <Font name="Arial Black" size="36.0" />
+         </font>
+      </Text>
+      <TextField fx:id="fldCantidad" layoutX="839.0" layoutY="448.0" prefHeight="51.0" prefWidth="158.0">
+         <effect>
+            <InnerShadow height="5.0" radius="2.0" width="5.0" />
+         </effect></TextField>
    </children>
 </AnchorPane>

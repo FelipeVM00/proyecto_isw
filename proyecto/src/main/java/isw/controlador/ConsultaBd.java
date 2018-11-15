@@ -16,6 +16,8 @@ public class ConsultaBd {
 	private PreparedStatement consultarProductoo = null;
 	private PreparedStatement consultarProductoo2 = null;
 	private PreparedStatement newProducto = null;
+	private PreparedStatement removeProducto = null;
+	private PreparedStatement removeProducto2 = null;
 	
 	public ConsultaBd(Connection conex) {
 		this.conexion = conex;
@@ -25,7 +27,11 @@ public class ConsultaBd {
 			consultarProductoo2 = conexion.prepareStatement(
 					"SELECT id, nombre, cantidad, precio FROM producto WHERE id = ?");
 			newProducto =conexion.prepareStatement(
-					"INSERT INTO producto "+"(id, nombre, cantidad, precio )"+" VALUES (?, ?, ?, ?)");
+					"INSERT INTO producto "+"(id, nombre, precio, cantidad )"+" VALUES (?, ?, ?, ?)");
+			removeProducto =conexion.prepareStatement(
+					"UPDATE producto SET cantidad = (cantidad-?) WHERE id = ?"); 
+			removeProducto2 =conexion.prepareStatement(
+					"UPDATE producto SET cantidad = (cantidad-?) WHERE nombre = ?"); 
 		}
 		catch (SQLException sqlException) {
 			sqlException.printStackTrace();
@@ -73,7 +79,7 @@ public class ConsultaBd {
 		return pro;
 	}
 	
-  public void agregarProducto (String nombre, String id, Double precio, int cantidad) {
+  public void agregarProducto (String id, String nombre, Double precio, int cantidad) {
 		
 		try {
 			
@@ -82,6 +88,43 @@ public class ConsultaBd {
 			newProducto.setDouble(3, precio);
 			newProducto.setInt(4, cantidad);
 			newProducto.executeUpdate();	
+		
+		}
+		
+		catch(SQLException exception){
+		
+			exception.printStackTrace();
+
+		}
+
+	}
+  
+  public void eliminarProducto (String cantidad, String id ) {
+		
+		try {
+			
+			
+			removeProducto.setString(1, cantidad);
+			removeProducto.setString(2, id);
+			removeProducto.executeUpdate();	
+		
+		}
+		
+		catch(SQLException exception){
+		
+			exception.printStackTrace();
+
+		}
+
+	}
+  
+  public void eliminarProducto2 (String cantidad, String nombre) {
+		
+		try {
+			
+			removeProducto2.setString(1, cantidad);
+			removeProducto2.setString(2, nombre);
+			removeProducto2.executeUpdate();	
 		
 		}
 		

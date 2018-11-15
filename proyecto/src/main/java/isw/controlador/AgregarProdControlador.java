@@ -45,43 +45,44 @@ public class AgregarProdControlador implements Initializable {
 	 @FXML
 	 private TextField fldPrecio;
 	
-	 
-	 
-	
-	@FXML
-    void clickBtnCancelar(ActionEvent event) throws IOException {
-		Stage stage = (Stage) btnCancelar.getScene().getWindow();
-		Parent root = FXMLLoader.load(getClass().getResource("/isw/vista/gestionarInventario.fxml"));
-		Scene scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
-		stage.setFullScreen(true);
-    }
-	
-	@FXML
-    void clickBtnAgregar(ActionEvent event) throws IOException {
-		System.out.println("asd");
-		ConsultaBd agregarProducto = new ConsultaBd(conexion);
-		
-		String nombre = (fldNombre.getText());
-		String id = (fldId.getText());
-		double precio = Double.parseDouble(fldPrecio.getText());
-		int cantidad = Integer.parseInt(fldCantidad.getText()); 
-
-		 agregarProducto.agregarProducto( id, nombre,  precio, cantidad);
-		
-	}
 
 	@Override
-	public void initialize(URL location, ResourceBundle resources) {
+	public void initialize (URL location, ResourceBundle resources) {
 		
 		conexion = new conexBd().conectarse();
 		btnAgregar.setOnAction(new EventHandler<ActionEvent>() {
 		    @Override public void handle(ActionEvent e) {
-		        System.out.println("asdd");
+		    	
+		    	ConsultaBd agregarProducto = new ConsultaBd(conexion);
+
+		    		fldId.getText();
+					fldNombre.getText();
+					fldPrecio.getText();
+					fldCantidad.getText(); 
+
+					 agregarProducto.agregarProducto( fldId.getText(), fldNombre.getText(),    Double.parseDouble(fldPrecio.getText())  , Integer.parseInt(fldCantidad.getText()));
+					 System.out.println("Producto agregado");
+
+
 		    }
 		});
 		
+		btnCancelar.setOnAction(new EventHandler<ActionEvent>() {
+		    @Override public void handle(ActionEvent e) {
+		    	Stage stage = (Stage) btnCancelar.getScene().getWindow();
+				Parent root;
+				try {
+					root = FXMLLoader.load(getClass().getResource("/isw/vista/gestionarInventario.fxml"));
+					Scene scene = new Scene(root);
+					stage.setScene(scene);
+					stage.show();
+					stage.setFullScreen(true);
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+		    }
+		    });
 	}
 
 }
