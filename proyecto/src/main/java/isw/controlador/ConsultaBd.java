@@ -8,6 +8,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
 import isw.modelo.Producto;
+import isw.modelo.Usuario;
 
 public class ConsultaBd {
 
@@ -18,6 +19,7 @@ public class ConsultaBd {
 	private PreparedStatement newProducto = null;
 	private PreparedStatement removeProducto = null;
 	private PreparedStatement removeProducto2 = null;
+	private PreparedStatement consultarUsuario = null;
 	
 	public ConsultaBd(Connection conex) {
 		this.conexion = conex;
@@ -32,6 +34,8 @@ public class ConsultaBd {
 					"UPDATE producto SET cantidad = (cantidad-?) WHERE id = ?"); 
 			removeProducto2 =conexion.prepareStatement(
 					"UPDATE producto SET cantidad = (cantidad-?) WHERE nombre = ?"); 
+			consultarUsuario = conexion.prepareStatement(
+					"SELECT nombre, contraseña FROM usuarios");
 		}
 		catch (SQLException sqlException) {
 			sqlException.printStackTrace();
@@ -102,8 +106,7 @@ public class ConsultaBd {
   public void eliminarProducto (String cantidad, String id ) {
 		
 		try {
-			
-			
+
 			removeProducto.setString(1, cantidad);
 			removeProducto.setString(2, id);
 			removeProducto.executeUpdate();	
@@ -135,6 +138,24 @@ public class ConsultaBd {
 		}
 
 	}
+  
+  public Usuario consultarUsuario (String nombre, String contraseña, Usuario user) {
+
+
+		try {		
+
+			ResultSet result = consultarUsuario.executeQuery();
+			 result.next();
+				user.setNombre(result.getString("nombre"));
+				user.setContraseña(result.getString("contraseña"));
+	
+			
+		} 
+		catch (SQLException sqlException) {
+			sqlException.printStackTrace();
+		}
+		return user;
+  }
 	
 	public void close() {
 		try {
