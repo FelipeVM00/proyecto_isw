@@ -1,6 +1,8 @@
 package isw.controlador;
 
 import javafx.scene.control.TextField;
+import javafx.scene.control.ButtonBar.ButtonData;
+
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -14,11 +16,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Dialog;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Pair;
 import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -59,11 +64,29 @@ public class AgregarProdControlador implements Initializable {
 					fldNombre.getText();
 					fldPrecio.getText();
 					fldCantidad.getText(); 
-
-					 agregarProducto.agregarProducto( fldId.getText(), fldNombre.getText(),    Double.parseDouble(fldPrecio.getText())  , Integer.parseInt(fldCantidad.getText()));
-					 System.out.println("Producto agregado");
-
-
+					if (fldNombre.getText().trim().isEmpty() ) {
+						 Dialog<Pair<String, String>> dialog = new Dialog<>();
+			    		 ButtonType btnOk = new ButtonType("OK", ButtonData.OK_DONE);
+			    		    	dialog.setTitle("ALERTA");
+			    		    	dialog.setHeaderText("Por favor inserte un nombre valido");	
+			    		    	dialog.getDialogPane().getButtonTypes().add(btnOk);;
+			    		    	dialog.show();	  
+					}else if ( fldId.getText().trim().isEmpty()) {
+							 Dialog<Pair<String, String>> dialog = new Dialog<>();
+				    		 ButtonType btnOk = new ButtonType("OK", ButtonData.OK_DONE);
+				    		    	dialog.setTitle("ALERTA");
+				    		    	dialog.setHeaderText("Por favor inserte un Id valido");	
+				    		    	dialog.getDialogPane().getButtonTypes().add(btnOk);;
+				    		    	dialog.show();	  
+					}else {
+						 agregarProducto.agregarProducto( fldId.getText(), fldNombre.getText(),    Double.parseDouble(fldPrecio.getText())  , Integer.parseInt(fldCantidad.getText()));
+						 Dialog<Pair<String, String>> dialog = new Dialog<>();
+			    		 ButtonType btnOk = new ButtonType("OK", ButtonData.OK_DONE);
+			    		    	dialog.setTitle("MSG");
+			    		    	dialog.setHeaderText("Producto agregado exitosamente");	
+			    		    	dialog.getDialogPane().getButtonTypes().add(btnOk);;
+			    		    	dialog.show();	  
+					}
 		    }
 		});
 		
